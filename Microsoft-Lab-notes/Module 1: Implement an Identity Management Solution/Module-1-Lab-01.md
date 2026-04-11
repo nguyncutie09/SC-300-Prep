@@ -10,7 +10,7 @@ ChrisG@cyforgeglobal.onmicrosoft.com
 
 ChrI34@s
 
-2\. Khi đăng nhập bằng user sẽ yêu cầu set pass mới, sau đó MFA (do security defaul)
+2\. Khi đăng nhập bằng user sẽ yêu cầu set pass mới, sau đó MFA (do security default)
 
 3\. Check quyền
 
