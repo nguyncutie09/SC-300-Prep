@@ -10,7 +10,7 @@ Vào Domain names > Add custom domain > nhập
 
 Sau khi add xong phải verify bằng TXT record (hoặc MX)
 
-2\. Add record TXT vào nơi quản lý domain
+2. Add record TXT vào nơi quản lý domain
 
 * Nếu dùng domain gốc thì host là @
 * Nếu dùng subdomain thì host là phần sub
@@ -44,13 +44,13 @@ Technical contact thì thường nên là người trong team kỹ thuật, vậ
 
 Global privacy contact nên là legal team, compliance officer, IT Admin
 
-2\. Privacy statement URL
+2. Privacy statement URL
 
 Viết privacy xong ném link vào
 
 Important: a guest user sẽ thấy thông báo này khi được mời qua B2B collaboration.
 
-3\. Check Privacy Statement
+3. Check Privacy Statement
 
 Log in vào azure > click vào avt góc phải chọn View account > thanh bên trái chọn Setting \& Privacy > Privacy > trong mục **Organization's notice** đã hiện **CyForge VN organizational privacy statement. Đây cũng là nơi sẽ hiển thị terms of use.**
 
