@@ -4,15 +4,15 @@
 
 ##### Ex 1: Create a new user and test their application admin rights
 
-1\. Tạo user
+1. Tạo user
 
 ChrisG@cyforgeglobal.onmicrosoft.com
 
 ChrI34@s
 
-2\. Khi đăng nhập bằng user sẽ yêu cầu set pass mới, sau đó MFA (do security default)
+2. Khi đăng nhập bằng user sẽ yêu cầu set pass mới, sau đó MFA (do security default)
 
-3\. Check quyền
+3. Check quyền
 
 Tạo app trên tài khoản user ChrisG
 
