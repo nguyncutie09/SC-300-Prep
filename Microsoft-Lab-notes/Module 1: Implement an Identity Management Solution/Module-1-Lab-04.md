@@ -17,7 +17,7 @@ Khi doanh nghiệp có 1 web/app:
 * Yes: ai cũng có thể tự đăng ký vào hệ thống, guest có thể tự bấm sign up, tạo tài khoản và dùng luôn.
 * No: người ngoài (guest) không tự đăng ký được. Bắt buộc admin phải tạo user hoặc invite (qua email)
 
-2\. Cấu hình external collaboration settings
+2. Cấu hình external collaboration settings
 
 External identities > All identity providers
 
