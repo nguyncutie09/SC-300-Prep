@@ -8,11 +8,11 @@
 * Member type gồm: assigned, dynamic user, dynamic device
 * Microsoft Entra roles can be assigned to the group: Yes (Group đó trở thành role-assignable group) tức là khi gán 1 vai trò cho group thì tất cả user trong group tự động nhận quyền
 
-2\. Gán owner và member vào
+2. Gán owner và member vào
 
-3\. Add license cho group
+3. Add license cho group
 
-4\. Check license
+4. Check license
 
 ##### Ex 2: Create a Microsoft 365 group in Microsoft Entra ID
 
@@ -29,9 +29,9 @@
 
 \-> Tức là lấy user hợp lệ (user không có id = null)
 
-3\. Save > Create
+3. Save > Create
 
-4\. Chờ để verify, tất cả user đã tạo (hợp lệ) included trong dynamic group này.
+4. Chờ để verify, tất cả user đã tạo (hợp lệ) included trong dynamic group này.
 
 ##### Thử với các rules khác:
 
