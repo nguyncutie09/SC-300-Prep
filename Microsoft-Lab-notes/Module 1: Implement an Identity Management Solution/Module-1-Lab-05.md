@@ -8,11 +8,11 @@
 
 NOTE: Nhập địa chỉ email của 1 cá nhân, group email không được hỗ trợ. Microsoft hiện kh hỗ trợ dấu + trong email.
 
-2\. Nhập email, display name và message
+2. Nhập email, display name và message
 
-3\. Qua tab Properties, có thể thấy User type là Guest
+3. Qua tab Properties, có thể thấy User type là Guest
 
-4\. Rv + invite > Invite
+4. Rv + invite > Invite
 
 ##### Ex 2: Invite guest users in bulk
 
@@ -28,9 +28,9 @@ row 3: example
 
 row 4-: data
 
-2\. Save file and upload. Submit.
+2. Save file and upload. Submit.
 
-3\. Để xem status, chọn **Select here to view the status of each operation** hoặc **Bulk operation results**. Để xem chi tiết thì chọn vào value dưới # Success, #Failure hoặc Total Requests columns.
+3. Để xem status, chọn **Select here to view the status of each operation** hoặc **Bulk operation results**. Để xem chi tiết thì chọn vào value dưới # Success, #Failure hoặc Total Requests columns.
 
 ###### **MỜI GUEST VỚI POWERSHELL**
 
