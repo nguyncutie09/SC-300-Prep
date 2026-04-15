@@ -10,7 +10,7 @@
 * **Trusted IPs**: bỏ qua MFA đến từ 1 dải IP cụ thể hoặc có thể bỏ qua MFA đến từ users đã federated
 * **Remember multifactor authentication on trusted device**: cho phép user được nhớ MFA trên những device mà đã được trust. Có thể chỉnh số ngày.
 
-3\. Cấu hình conditional access policies.
+3. Cấu hình conditional access policies.
 
 ##### Ex 2:  Configure MFA to be required for login
 
