@@ -28,13 +28,13 @@ Tiếp tục
 
 https://microsoftonline.com
 
-3\. Phần Authorized redirect URIs, click Add và nhập:
+3. Phần Authorized redirect URIs, click Add và nhập:
 
 * 1st url: https://login.microsoftonline.com
 * 2nd url: https://login.microsoftonline.com/te/***tenant*** ***ID***/oauth2/authresp
 * 3rd url: https://login.microsoftonline.com/te/***tenant name***.onmicrosoft.com/oauth2/authresp
 
-4\. Click create. Sau đó copy client id và client secret.
+4. Click create. Sau đó copy client id và client secret.
 
 644183526689-1m9m6i31h2rvbj5fh4aeitmppa25v7kh.apps.googleusercontent.com
 
@@ -46,7 +46,7 @@ Task 2 - Add a test user
 
 (Vì app chưa publish, chỉ user trong danh sách này login được)
 
-2\. Test log in (user đó đã accept guest invitation)
+2. Test log in (user đó đã accept guest invitation)
 
 ###### Task 3 - Add authorized domain to Branding
 
