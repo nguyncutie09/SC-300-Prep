@@ -40,7 +40,7 @@ https://microsoftonline.com
 
 GOCSPX-g6jbpShc\_IgoBtKWFTHgqAr6Yg45
 
-Task 2 - Add a test user
+###### Task 2 - Add a test user
 
 1. Thanh trái, chọn Audience. Kéo xuống Test users, chọn Add users. Thêm gmail vào để test lab. Save.
 
