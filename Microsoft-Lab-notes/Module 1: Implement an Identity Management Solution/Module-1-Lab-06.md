@@ -73,7 +73,7 @@ NOTE: nếu federation work thì user nhập email sẽ redirect sang Gg Account
 
 
 
-##### Task 4 - Login to Microsoft 365 using your Google account
+###### Task 4 - Login to Microsoft 365 using your Google account
 
 1. Nếu done task 3 được thì task này oke. Mở Inprivate browser. Enter: login.microsoftonline.com
 2. Chọn sign in options > sig in to an organization
