@@ -9,14 +9,14 @@ Dùng Microsoft Entra để auth vào Azure VM
 1. Khi tạo VM, tick '**Login with Microsoft Entra ID**'
 * Hệ thống sẽ tự bật '**System Assigned Managed Identit**y'
 
-2\. Dùng RBAC
+2. Dùng RBAC
 
 * admin gán VM Admin Login
 * user thường gán VM User Login
 * Không có role thì không thể login được
 * Role này gán ở VM level, Resource group, Subscription
 
-3\. User phải là Entra identity
+3. User phải là Entra identity
 
 ##### Cơ chế hoạt động
 
