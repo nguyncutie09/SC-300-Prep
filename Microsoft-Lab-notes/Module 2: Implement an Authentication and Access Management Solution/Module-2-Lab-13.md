@@ -14,11 +14,11 @@ Your organization needs to be able to limit user access to its internal applicat
 
 1. Xác thực user có quyền vào Sway
 
-2\. Tạo policy block user access vào Sway
+2. Tạo policy block user access vào Sway
 
 Lưu ý exclude acc admin
 
-3\. Test policy xem thực thi đúng không
+3. Test policy xem thực thi đúng không
 
 Kết quả là user kh còn access được vào Sway
 
