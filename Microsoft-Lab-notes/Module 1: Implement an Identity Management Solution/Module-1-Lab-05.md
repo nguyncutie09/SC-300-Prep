@@ -1,6 +1,6 @@
 # Module 1
 
-### Lab 05: Add guest users to the directory
+### Lab 05 - Add guest users to the directory
 
 ##### Ex 1: Add guest users to the directory
 
