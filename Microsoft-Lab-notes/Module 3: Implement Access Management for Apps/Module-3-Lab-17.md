@@ -13,11 +13,11 @@
 5. Mở tab khác và truy cập www.dropbox.com
 6. Có thể access vào website này, đóng tab
 
-7\. Click vào Dropbox trong click app. Xuất hiện details. Click Sanction. Xuất hiện thông báo Sanctioned app. 
+7. Click vào Dropbox trong click app. Xuất hiện details. Click Sanction. Xuất hiện thông báo Sanctioned app. 
 
 Task 2 - Restrict Apps in Defender for Cloud Apps
 
-8\. Chỉnh lại unsanction cho Dropbox. Trong tag app còn có Monitored.
+8. Chỉnh lại unsanction cho Dropbox. Trong tag app còn có Monitored.
 
 Quy trình này cho phép block các ứng dụng không được phê duyệt theo chính sách của công ty, giúp hạn chế Shadow IT trong tổ chức.
 
