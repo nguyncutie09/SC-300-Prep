@@ -1,6 +1,6 @@
 # Module 1
 
-### Lab 02: Working with tenant properties
+### Lab 02 - Working with tenant properties
 
 ##### Ex 1: Create a custom subdomains
 
