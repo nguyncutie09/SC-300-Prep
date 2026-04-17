@@ -1,6 +1,6 @@
 # Module 1
 
-### Lab 01: Manage user roles
+### Lab 01 - Manage user roles
 
 ##### Ex 1: Create a new user and test their application admin rights
 
