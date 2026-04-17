@@ -1,6 +1,6 @@
 # Module 1
 
-### Lab 04: Configure external collaboration settings
+### Lab 04 - Configure external collaboration settings
 
 ##### Ex 1: Allowing guest users to be invited into your organization
 
