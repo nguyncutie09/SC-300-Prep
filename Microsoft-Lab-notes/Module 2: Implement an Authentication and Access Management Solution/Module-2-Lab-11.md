@@ -14,13 +14,13 @@ Dùng Microsoft Entra PIM để gán quyền trên Azure resources. Tạo trạn
 * Roles by assignment (descending) (Role|Eligible|Active)
 * Alert
 
-3\. Dưới mục Manage:
+3. Dưới mục Manage:
 
 * **Roles** > (Resource type có sẵn là Directory) > Add assignment > chọn role > chọn member > Next > Assignment type: Eligible > Assign
 
 Có mục tick cho chọn permanent, dựa trên assignment type nó sẽ là permanently eligible hoặc permanently assigned. Nếu không tick permanent thì có thể chọn ngày start và ngày end của assignment đấy.
 
-4\. Muốn remove thì dưới Manage vào mục Assignments
+4. Muốn remove thì dưới Manage vào mục Assignments
 
 Hiển thị assignment và người dùng được assign, kéo thanh ngang sang phải có thể thấy nút Remove | Update
 
