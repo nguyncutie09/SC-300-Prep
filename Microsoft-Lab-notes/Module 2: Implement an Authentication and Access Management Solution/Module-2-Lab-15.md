@@ -28,7 +28,7 @@ Giải pháp chuẩn:
 
 Authorization: Bearer <token>
 
-4\. Key Vault trả về Secret
+4. Key Vault trả về Secret
 
 
 
