@@ -1,6 +1,6 @@
 # Module 1
 
-### Lab 06: Add a federated identity provider
+### Lab 06 - Add a federated identity provider
 
 Scenario là công ty cần làm việc với nhiều vendors và cần add các tài khoản của vendor vào directory với type guest và cho phép họ dùng gg account để log in. (Thực chất là cấu hình federation giữa Google (IdP) và Microsoft Entra ID.)
 
