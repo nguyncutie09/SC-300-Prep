@@ -30,9 +30,7 @@ Dùng Microsoft Entra để auth vào Azure VM
 
 Trong Windows VM:
 
-System → Remote Desktop → 
-
-✔ Allow connections only from computers running Remote Desktop with NLA
+System → Remote Desktop → ✔ Allow connections only from computers running Remote Desktop with NLA
 
 Phải tắt NLA vì Entra ID login qua RDP không tương thích hoàn toàn với NLA mặc định.
 
