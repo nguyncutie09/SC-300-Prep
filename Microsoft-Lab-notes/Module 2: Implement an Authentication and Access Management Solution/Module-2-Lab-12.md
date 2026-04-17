@@ -13,8 +13,6 @@ Lockout threshold: số lần đăng nhập sai liên tiếp tối đa trước 
 
 Lockout duration in seconds: thời gian bị khóa tạm thời
 
-NOTE: 
-
 * Mục Custom banned passwords
 
 Enforce custom list: Yes or no
