@@ -18,7 +18,7 @@ Mục Controls:
 
 Tuy nhiên tháng 10,2026 phần Risk policy này sẽ migrate vào Conditional Access. nên từ giờ chỉ read-only được thôi.
 
-3\. Dưới mục Protect chọn Sign-in risk policy
+3. Dưới mục Protect chọn Sign-in risk policy
 
 Tương tự với User risk, tuy nhiên phần Access thì Require MFA.
 
