@@ -73,8 +73,6 @@ quy ước đặt tên phổ biến: resource.operation.constraint (tài nguyên
 * User consent des: Allow the application to have read-only access to your employee data.
 * State: Enable
 
-> Add scope
-
 6. (optional) Pre-authorize client
 
 Có thể pre-authorize client app để không cần user consent khi truy cập scopes. Chỉ nên áp dụng với client app đáng tin cậy (trusted app) vì user sẽ không có quyền từ chối consent.
@@ -100,8 +98,8 @@ NOTE: nếu URI dùng https://contoso.com/api thì full scope sẽ hiển thị 
 
 ##### Ex 2: Manage app registration with a custom role
 1. Vào Roles and admins > New custom role > Đặt tên > Next > Chọn 2 permissions sau:
-    microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials  -   Manage password single sign-on credentials or service principals.
-    microsoft.directory/servicePrincipals/synchronizationCredentials/manage    -   Manage application provisioning secrets and credentials.
+> microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials  -   Manage password single sign-on credentials or service principals.
+> microsoft.directory/servicePrincipals/synchronizationCredentials/manage    -   Manage application provisioning secrets and credentials.
 Next > Create
 Chọn 2 quyền này vì đối với việc provisioning app thì đây là những quyền tối thiểu cần thiết để:
 - bật và thực thi SSO cho app hoặc service principal được tạo
