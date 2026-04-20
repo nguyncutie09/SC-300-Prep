@@ -100,6 +100,7 @@ NOTE: nếu URI dùng https://contoso.com/api thì full scope sẽ hiển thị 
 1. Vào Roles and admins > New custom role > Đặt tên > Next > Chọn 2 permissions sau:
 > microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials  -   Manage password single sign-on credentials or service principals.
 > microsoft.directory/servicePrincipals/synchronizationCredentials/manage    -   Manage application provisioning secrets and credentials.
+
 Next > Create
 Chọn 2 quyền này vì đối với việc provisioning app thì đây là những quyền tối thiểu cần thiết để:
 - bật và thực thi SSO cho app hoặc service principal được tạo
