@@ -12,13 +12,13 @@ WARNING: Cấp admin consent trên toàn tenant cho 1 app cho phép app và nhà
 
 Để cấp admin consent cho app permissions đối với Microsoft Graph API, cần có Global Admin.
 
-2\. Chọn cái Demo app đã tạo ở lab 19. Copy lại App ID và Directory ID.
+2. Chọn cái Demo app đã tạo ở lab 19. Copy lại App ID và Directory ID.
 
 d42ff2a1-e1af-4c37-a510-e472721dbc2d
 
 0ab428ed-9611-4ffa-afb3-915bb61d5c2d
 
-3\. Under Manage, chọn API permissions. Under Configured permissions > click Grant admin consent information > Yes
+3. Under Manage, chọn API permissions. Under Configured permissions > click Grant admin consent information > Yes
 
 \-Việc cấp admin consent trên toàn tenant thông qua App registrations sẽ thu hồi (revoke) bất kỳ quyền nào đã được cấp trước đó ở mức toàn tenant. (kiểu áp lại permissions mới th)
 
