@@ -12,7 +12,7 @@ A catalog is a container of resources and access packages. You create a catalog 
 
 Có Name, Des, Enabled for users to request: **Yes**/No, Enabled for external users to request: Yes/**No** (This setting allows users in selected external directories to be able to request access packages in this catalog. Default is No).
 
-2\. Add resources vào catalog. Chọn catalog vừa tạo > Under Manage. chọn Resources > Add resources, các lựa chọn có thể Add:
+2. Add resources vào catalog. Chọn catalog vừa tạo > Under Manage. chọn Resources > Add resources, các lựa chọn có thể Add:
 
 * Groups and Teams
 * Applications
@@ -22,7 +22,7 @@ Có Name, Des, Enabled for users to request: **Yes**/No, Enabled for external us
 
 Add group Retail, app Box, Salesforce, SharePoint sites: Brand - pick this SharePoint from your list of available sites > Add
 
-3\. Add additional catalog owners. Chọn catalog vừa tạo > under Manage, chọn Role and admin > có 3 lựa chọn Add là:
+3. Add additional catalog owners. Chọn catalog vừa tạo > under Manage, chọn Role and admin > có 3 lựa chọn Add là:
 
 * Add catalog owner (có thể là user, group, app)
 * Add catalog reader
@@ -31,11 +31,11 @@ Add group Retail, app Box, Salesforce, SharePoint sites: Brand - pick this Share
 
 Chọn add catalog owner > chọn user muốn làm owner và Add
 
-4\. Edit catalog
+4. Edit catalog
 
 ID Gov > Entitlement Management > Catalog > chọn group catalog muốn edit > Overview > Edit > Mục Enabled switch to Yes.
 
-5\. Tạo Access Review cho Guest users. Vào ID Gov > Access Reviews > New access review, có 2 loại template:
+5. Tạo Access Review cho Guest users. Vào ID Gov > Access Reviews > New access review, có 2 loại template:
 
 * Resource review: Review access to a resource type. Chỉ tập trung vào 1 loại Resource cụ thể, như 1 nhóm, 1 app hoặc 1 role. phù hợp khi muốn kiểm tra xem ai đang có quyền vào 1 nhóm cụ thể.
 * Catalog review: Review users access across multiple resource types within a catalog. Quét qua tất cả resources được gom nhóm trong 1 Catalog. phù hợp khi muốn kiểm tra trong Catalog (dự án) cụ thể, user đó đang có những quyền gì trên toàn bộ App, Group và Role của dự án đó.
@@ -151,5 +151,5 @@ Lab này chọn Guest users
 
 * Review > create
 
-6\. Delete a catalog. chọn vào Catalog muốn xóa xong ở mục Overview có nút Delete next to Edit button.
+6. Delete a catalog. chọn vào Catalog muốn xóa xong ở mục Overview có nút Delete next to Edit button.
 
