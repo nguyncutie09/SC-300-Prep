@@ -29,7 +29,7 @@ Yes → Chủ group (owner) có thể:
 
 No → Chỉ admin (Global Admin / Identity Governance Admin) mới làm được
 
-2\. Phần life cycle bây giờ khác với hướng dẫn cũ. Truy cập ID Gov > Entitlement management > Control configurations > Sẽ thấy Lifecycle of external user > click View settings, cấu hình:
+2. Phần life cycle bây giờ khác với hướng dẫn cũ. Truy cập ID Gov > Entitlement management > Control configurations > Sẽ thấy Lifecycle of external user > click View settings, cấu hình:
 
 \-Block external user from signing in: Yes tức là khóa đăng nhập đến khi hết access package. Nếu user cần request lại access, không nên bật.
 
