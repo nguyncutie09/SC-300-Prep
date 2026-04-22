@@ -32,13 +32,13 @@ Các hành động có thể bao gồm:
 
 \-Active assignments thì không yêu cầu hành động nào để sử dụng role. Người dùng được gán dạng active sẽ luôn có quyền của role đó.
 
-2\. Add assignment > chọn members, select > next > chọn assignment type và có checkbox permanent cho 2 type trên > Assign
+2. Add assignment > chọn members, select > next > chọn assignment type và có checkbox permanent cho 2 type trên > Assign
 
-3\. Activate your Microsoft Entra roles. Vào PIM > Under Task, chọn My roles > tại Microsoft Entra roles, có thể thấy entry cho role Compliance Administrator ở tab Eligible và bao gồm action Active. Click Active > chờ tí để quá trình Verification hoàn tất > chỉnh Duration > nhập Reason > click Active.
+3. Activate your Microsoft Entra roles. Vào PIM > Under Task, chọn My roles > tại Microsoft Entra roles, có thể thấy entry cho role Compliance Administrator ở tab Eligible và bao gồm action Active. Click Active > chờ tí để quá trình Verification hoàn tất > chỉnh Duration > nhập Reason > click Active.
 
 **NOTE**: Theo nguyên tắc least privilege, chỉ nên kích hoạt tài khoản trong khoảng thời gian thực sự cần thiết.
 
-4\. Assign a role with restricted scope
+4. Assign a role with restricted scope
 
 Đối với một số role nhất định, phạm vi quyền được cấp (scope) có thể được giới hạn trong:
 
@@ -54,5 +54,5 @@ As you did when assigning a role without a restricted scope, you would add membe
 
 **TIP**: Go to https://docs.microsoft.com/en-us/azure/active-directory/roles/admin-units-manage for more information about the administrative unit scope type.
 
-5\. Update or remove an existing role assignment. Vào PIM > Under Manage, chọn Assignments > các entry kéo sang phải có nút Remove | Update
+5. Update or remove an existing role assignment. Vào PIM > Under Manage, chọn Assignments > các entry kéo sang phải có nút Remove | Update
 
