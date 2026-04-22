@@ -10,9 +10,7 @@ You must create and enforce a ToU policy for your organization.
 
 1. ID Gov > Entitlement management > Kéo xuống chọn Terms of use > New terms:
 
-Nhập Name, Terms of use document chọn file PDF, nhập Display Name. Select
-
-default language.
+Nhập Name, Terms of use document chọn file PDF, nhập Display Name. Select default language.
 
 **Note**: The language option allows you to upload multiple terms of use, each with a different language. The version of the terms of use that an end user will see will be based on their browser preferences.
 
