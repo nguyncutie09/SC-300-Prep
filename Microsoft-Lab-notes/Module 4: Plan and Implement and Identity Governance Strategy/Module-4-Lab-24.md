@@ -31,13 +31,13 @@ No → Chỉ admin (Global Admin / Identity Governance Admin) mới làm đượ
 
 2. Phần life cycle bây giờ khác với hướng dẫn cũ. Truy cập ID Gov > Entitlement management > Control configurations > Sẽ thấy Lifecycle of external user > click View settings, cấu hình:
 
-\-Block external user from signing in: Yes tức là khóa đăng nhập đến khi hết access package. Nếu user cần request lại access, không nên bật.
+* Block external user from signing in: Yes tức là khóa đăng nhập đến khi hết access package. Nếu user cần request lại access, không nên bật.
 
-\-Remove external user: Yes là xóa tài khoản guest khỏi tenant.
+* Remove external user: Yes là xóa tài khoản guest khỏi tenant.
 
 Lưu ý cái này chỉ xóa user được invite qua access package. Dù user có quyền ở resource khác (SharePoint, OneDrive) thì vẫn bị xóa.
 
-\-Number of days before removing: default là 30 days. Nếu đặt là 0 thì xóa ngay lập tức.
+* Number of days before removing: default là 30 days. Nếu đặt là 0 thì xóa ngay lập tức.
 
 
 
