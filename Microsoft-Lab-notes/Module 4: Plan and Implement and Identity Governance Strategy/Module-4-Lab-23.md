@@ -24,17 +24,16 @@ default language.
 
 \-Duration before re-acceptance required (days): vd set 90 days thì mỗi 90 ngày user phải xác nhận lại Terms of Use.
 
-2\. Dưới mục Conditional access > Enforce with conditional access policy templates, chọn Policy templates, có thể là Custom policy hoặc Create conditional access policy later.
+2. Dưới mục Conditional access > Enforce with conditional access policy templates, chọn Policy templates, có thể là Custom policy hoặc Create conditional access policy later.
 
 **IMPORTANT**: Conditional Access policy controls (including terms of use) do not support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
 
-3\. Sau khi click Custom policy, chuyển tới trang để tạo policy mới. Tạo CA để enforced ToU, Grant access cho terms of use > Select. Enable policy và Create.
+3. Sau khi click Custom policy, chuyển tới trang để tạo policy mới. Tạo CA để enforced ToU, Grant access cho terms of use > Select. Enable policy và Create.
 
-4\. Log in với user đã gán CA và sẽ được yêu cầu accept terms of use. Nếu decline thì log in lại vẫn sẽ được yêu cầu accept.
+4. Log in với user đã gán CA và sẽ được yêu cầu accept terms of use. Nếu decline thì log in lại vẫn sẽ được yêu cầu accept.
 
-5\. Xem report ai decline or accept ToU. Vào ID Gov > Entitlement management > ToU, có thể xem các ToU đã tạo và Current accepted/current declined. Select number hiển thị dưới sẽ biết là user nào đã thực hiện accepted/declined, tại thời điểm nào. Có nút download để download ToU report.
+5. Xem report ai decline or accept ToU. Vào ID Gov > Entitlement management > ToU, có thể xem các ToU đã tạo và Current accepted/current declined. Select number hiển thị dưới sẽ biết là user nào đã thực hiện accepted/declined, tại thời điểm nào. Có nút download để download ToU report.
 
-6\. User có thể review ToU mà họ đã accepted. Vào https://myapps.microsoft.com, Overview  > VIEW SETTINGS AND PRIVACY > Settings \& Privacy > Tab Privacy > kéo xuống Organization's notice > thấy ToU, You can edit some details of terms of use, but you can’t modify an existing document.
+6. User có thể review ToU mà họ đã accepted. Vào https://myapps.microsoft.com, Overview  > VIEW SETTINGS AND PRIVACY > Settings \& Privacy > Tab Privacy > kéo xuống Organization's notice > thấy ToU, You can edit some details of terms of use, but you can’t modify an existing document.
 
-7\. Edit ToU details. Vào entitle management > ToU > Click vào 1 entry term cần edit > Edit terms > Update an existing terms of use document. sau khi update có thể yêu cầu người dùng re-accept.
-
+7. Edit ToU details. Vào entitle management > ToU > Click vào 1 entry term cần edit > Edit terms > Update an existing terms of use document. sau khi update có thể yêu cầu người dùng re-accept.
