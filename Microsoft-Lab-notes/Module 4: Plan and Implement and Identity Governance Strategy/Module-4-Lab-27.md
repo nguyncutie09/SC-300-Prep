@@ -22,13 +22,13 @@ Vào portal.azure.com với quyền Global Admin. Search Microsoft Sentinel. Cli
 
 Review + create. sau khi create, chọn vào entry của workspace vừa tạo.
 
-2\. Select Add, this will add the workspace to Microsoft Sentinel and open Microsoft Sentinel.
+2. Select Add, this will add the workspace to Microsoft Sentinel and open Microsoft Sentinel.
 
-3\. Add Microsoft Entra ID as a Data source
+3. Add Microsoft Entra ID as a Data source
 
 Trong Microsoft Sentinel, Content management > Select Content hub > Cài connector Microsoft Entra ID > Bật log: Sign-in logs và Audit logs > Apply > Sau đó Sentinel sẽ bắt đầu ingest log từ Entra
 
-4\. Chạy KQL
+4. Chạy KQL
 
 Vào Logs > Chạy query mẫu (Audit → User IDs) >Xem activity của user
 
