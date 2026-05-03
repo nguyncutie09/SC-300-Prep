@@ -1,0 +1,137 @@
+Implement and manage user identities
+- Administrative units
+. dùng khi quản trị theo scope nhỏ như region, department
+. dùng cho multi-ti tenant nội bộ/tổ chức lớn cần least privilege
+
+- Users
+. cloud identities, directory-sync identities, guest users
+
+- Group
+. security group, microsoft 365 group
+
+ngoài ra thì có kiểu membership là assigned, dynamic user, dynamic group.
+assigned group có thể làm member của group khác nhưng dynamic group thì không.
+
+- Tenant settings: (có các settings sau)
+. cho phép user tự làm gì? - đăng ký app, consent app, join tenant
+. external collaboration (b2b) - kiểm soát guest (mời ai, quyền gì)
+. user consent settings (nên hạn chế, dùng admin consent)
+. default security
+
+- User settings
+. cho phép user register app, consent, join tenant.
+. user register app thường disable trong môi trường secure
+
+- Group settings
+. ai được create group, manage group
+. self-service (user tự tạo group, add member)
+. dynamic group = rule-based
+
+- Device settings 
+. join device: azure ad join/register
+. ai được join device vào tenant (user may join devices nên limit)
+. device là base cho CA
+
+- Custom security attributes
+. tùy chỉnh key-value gán cho user/service principle
+. dùng khi cần ABAC (attribute-based access control) / filter access
+vd: department=hr, level=high.
+. dùng để thêm điều kiện trong CA
+
+- Bulk operations
+. dùng khi onboarding/offboarding nhiều user
+. phải dùng template csv, có job status để check lỗi sau upload
+. không realtime
+. dùng powershell sẽ automation linh hoạt hơn csv upload
+Import-Csv users.csv | ForEach-Object {
+  New-MgUser -DisplayName $_.Name -UserPrincipalName $_.UPN `
+  -AccountEnabled $true -MailNickname $_.Alias `
+  -PasswordProfile @{Password="P@ssw0rd123"}
+}
+. cần Connect-MgGraph và đúng permission mới thực hiện được
+
+- Device Registration
+. BYOD / personal device
+. chỉ register identity, no full join
+. dùng cho CA (MFA, có compliant)
+
+- Device Join (Azure AD Join)
+. Company-owned device
+. device thuộc tenant, quản lý full (Intune)
+. dùng cho SSO, policy mạnh
+
+- External collaboration settings (B2B)
+. cấu hình cách guest truy cập tenant
+. ai được invite guest (admin only / user)
+. guest được làm gì (read info, access resource)
+. domain allow/block list. có thể giới hạn chỉ mời domain cụ thể.
+. mặc định là guest sẽ thấy được nhiều info directory, nên restrict
+. kết hợp CA để kiểm soát log in guest
+
+- Cross-tenant access settings
+. là trust giữa 2 tenant (b2b/b2b direct connect)
+. inbound / outbound access (ai từ tenant A ↔ B được vào)
+. trust settings: mfa, compliant device, hybrid join từ tenant kia
+. áp dụng cho user/group/app cụ thể
+. có thể trust mfa của tenant ngoài và kh cần mfa lại
+. control theo từng tenant, chi tiết hơn External collaboration. vì external collab là global cho tất cả guest
+
+- Cross-tenant synchronization
+. tự động sync user từ tenant A -> tenant B (tạo B2B user)
+. dùng khi 2 org hợp tác lâu dài, scale lớn, cần account luôn update (join/leave auto)
+. source tenant -> target tenant (1-way sync)
+. lifecycle tự động hóa hoàn toàn
+
+- External Identity Providers
+. cho phép user log in bằng identity bên ngoài (google, ad fs, saml idp...)
+. SAML, dùng xml assertion để xác thực, phổ biến cho enterprise sso
+. WS-Fed, giao thức cũ hơn, dùng cho AD FS. hay gặp trong hệ thống cũ/legacy.
+. dùng khi cần external auth thay vì local account.
+
+
+- Entra Connect Sync
+. tool cài on-prem server (agent nặng)
+. sync full user, group, pass hash, writeback
+. hỗ trợ hybrid phức tạp (exchange, device writeback,..)
+
+- Entra Connect Cloud Sync
+. dùng lightweight agent, cloud config
+. sync cơ bản (user/group/pass hash)
+. dễ triển khai, scale tốt
+
+- PHS password hash sync
+. sync hash pass lên entra
+. user log in trực tiếp trên cloud
+. đơn giản, ít phụ thuốc on-prem
+
+- PTA pass through auth
+. pass không lưu trên cloud
+. login -> entra gửi về on-prem agent để verify
+. cần agent luôn online (real-time)
+
+- Seamless SSO
+. user trong domain log in kh cần nhập lại password
+. dùng Kerberos ticket (on-prem AD) -> Entra xác thực
+. dùng với PHS hoặc PTA (kh dùng riêng lẻ)
+. chỉ hoạt động trong corp network/domain-joined device. phụ thuộc on-prem AD, mang tính nội bộ.
+. không phải sso cho tất cả (ra ngoài mạng có thể kh seamless được)
+. giảm prompt login, kh thay thế MFA
+
+- Migrate from AD FS (authn & authz)
+. migrate từ ad fs lên entra để xử lý authn và authz trên cloud
+. với authn, trước: ad fs validate login, sau: sẽ dùng phs/pta + CA + MFA
+. với authz, trước: ad fs dùng claims rules, sau: dùng entra (group, role, app role, CA)
+. migrate giúp giảm phụ thuộc on-prem federation. claims chuyển sang attribute/group/policy-based. cloud-first đơn giản hơn ad fs.
+
+- Entra Connect Health 
+. dịch vụ monitor và alert cho identity infra (ad fs, sync, domain services) dùng để detect issue sớm
+. theo dõi sync errors (user, pass), ad fs health (login failure, latency), agent status
+. cần install agent on-prem
+
+
+
+
+
+
+
+
