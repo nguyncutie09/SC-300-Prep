@@ -88,7 +88,6 @@ Import-Csv users.csv | ForEach-Object {
 . WS-Fed, giao thức cũ hơn, dùng cho AD FS. hay gặp trong hệ thống cũ/legacy.
 . dùng khi cần external auth thay vì local account.
 
-
 - Entra Connect Sync
 . tool cài on-prem server (agent nặng)
 . sync full user, group, pass hash, writeback
