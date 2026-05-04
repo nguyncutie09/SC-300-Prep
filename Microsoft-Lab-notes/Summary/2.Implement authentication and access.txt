@@ -1,0 +1,135 @@
+Implement authentication and access management
+- Authentication methods
+. cert-based auth: dùng x.509 cert để log in, kh cần password, phù hợp enterprise/smart card/device cert; phụ thuộc PKI (CA management)
+. temporary access pass TAP: time-limited, dùng để onboard/reset MFA/recovery, ngắn hạn
+. oauth tokens: token-based auth (Access/ID token), dùng cho app authZ (delegated access). 
+. microsoft auth-tor: app mfa (push/number matching/totp), passwordless login
+. FIDO2: passwordless hardware/biometric, security key hoặc windows hello, strongest mfa (vì phishing-resistant).
+
+- Tenant-wide MFA
+. bật mfa áp dụng toàn tenant. tất cả user phải mfa khi log in, có thể enforce theo location, device state, risk level,
+. điều khiển qua security defaults or CA policy (best practice là CA)
+. mfa kh thay password, chỉ bổ sung layer xác thực
+
+- Self-Service Password Reset SSPR
+. cho phép user reset password mà kh cần admin
+. user verify bằng methods (authn, sms, email,..) sau đó tự đặt lại pass
+. phải enable và chọn auth method trước.
+. có thể sync với on-prem, writeback nếu hybrid. có thể giới hạn theo group/user scope
+. giảm tải helpdesk/admin workload
+
+- Windows Hello for Business
+. passwordless cho windows bằng PIN/biometric
+. gắn với device trust (TPM + device-bound key)
+. enforce qua Intune/Group Policy. thiết bị phải entra joined hoặc hybrid joined, khuyến nghị có TPM.
+. không lưu pass mà dùng key pair (public/private)
+. key bị ràng buộc vào device (phishing-resistant)
+. có 2 module là cloud trust (modern) và key trust (legacy)
+
+- Disable account (user kh thể log in mới) và revoke session (log out user khỏi portal, apps). best practice là làm cả 2.
+
+- Enable Kerberos auth for hybrid identities
+. bật Kerberos-based auth cho user hybrid (on-prem ad + cloud)
+. dùng để truy cập tài nguyên cloud (đặc biệt file share, azure files, sso nội bộ mở rộng)
+. user vẫn auth qua ad, entra trust kerberos sau đó phát hành token cloud access
+. liên quan seamless sso
+
+- Password Protection
+. chặn weak/banned pass khi user đặt/đổi pass
+. có 2 lớp là global banned pass list (microsoft) và custom banned pass list
+. áp dụng cho cloud và synced pass (hybrid)
+. có password smart lockout để chống brute-force
+
+- Conditional Access
+. cấu trúc if-then
+. IF (user/group, location, device state (compliant/hybrid joined), app/resource, risk level)
+. THEN (block/grant access, require MFA, require compliant device, session control)
+. evaluate mỗi login/token refresh
+. có thể combine nhiều policy
+. là enforcement layer sau log in
+. test dùng What If, troubleshooting check sign-in logs
+
+- Session Management
+. sign-in frequency, log in lại sau x giờ/ngày
+. persistent browser session, có giữ session hay kh
+. re-auth, yêu cầu mfa lại khi truy cập sensitive app
+. app-enforce restrictions, giới hạn download/copy 
+(sharepoint/exchange)
+. kh chặn log in, chỉ kiểm soát session sau log in, dùng giảm rủi ro token bị abused, có thế áp theo app/user/risk level
+- Device-enforced restrictions
+. session control dựa trên trạng thái thiết bị, qdinh user làm được gi sau log in
+. device trusted thì full access, unmanaged or non-compliant sẽ bị hạn chế: view only, block copy/paste/down/hạn chế tính năng app
+. thường cần defender for cloud apps
+
+- Continuous Access Evaluation (CAE)
+. cho phép re-evaluate access gần real-time, kh chờ token hết hạn. khi có các sự kiện như password change/reset, acc disable, revoke sessions, risk change thì token sẽ bị invalidate ngay. giúp phản ứng nhanh khi acc bị compromised.
+
+- Authentication context (trong CA)
+. cho phép yêu cầu mức xác thực cao hơn cho action cụ thể
+. kiểu như 1 cái nhãn-tag, gán tag đó vào action trong app (vd như download file nhạy cảm), tạo CA policy cho tag đó (vd yêu cầu mfa mạnh).
+. kết quả là bình thường vào app okay nhưng khi làm action có tag thì sẽ bị yêu cầu thêm xác thực
+
+- Protected actions
+. bắt buộc mfa cho các thao tác nhạy cảm
+. triển khai bằng cách tạo CA policy, target chọn user actions, chọn protected action, control: require mfa
+
+*Protected action khác với auth context, dùng để bảo vệ high-privilege operations.
+Protected action → action trong Entra (admin)
+Auth context → action trong app (user)
+
+Manage user risk
+có 2 cách:
+. là Identity Protection (user risk policy). tự động xử lý theo risk
+. là dùng CA (user risk/sign-in risk). linh hoạt hơn vì combine nhiều condition
+
+- MFA Registration Policy
+. bắt user phải đăng ký mfa methods (auth or sms,..)
+. khi user login nếu chưa đăng ký mfa sẽ bị ép đăng ký ngay.
+. triển khai mfa toàn url và đảm bảo user có sẵn auth method
+. có thể scope theo group/user
+
+- Remediate risky sign-ins
+. xử lý log in có rủi ro, require mfa, block nếu risk cao.
+. sign n risk xử lý bằng mfa/block (CA policy)
+
+- Remediate risky workload identities
+. áp dụng cho service principle/ app (non-user)
+. rủi ro secret leak, credential bị lộ
+. xử lý bằng credential rotation + secure config
+
+user -> mfa
+app -> secret/cert
+
+-  Control plane vs Data plane
+. control plane là quản lý resource (CRUD). vd như tạo vm, xóa storage, config network. role: owner, contributor, reader. api: management.azure.com
+. data plane là truy cập dữ liệu bên trong resource. vd như đọc file, query database. role riêng: Storage Blob Data Reader, SQL Reader. api: data endpoint riêng của service.
+* có quyền quản lý chưa chắc có quyền truy cập dữ liêu bên trong và ngược lại. muốn đủ quyền phải assign cả 2 roles.
+
+- Evaluate effective permissions
+. xác định user/service thực sự có quyền gì sau khi cộng tất cả role. tính kiểu Union (cộng dồn) tất cả role assignments.
+. theo scope hierarchy: scope cao -> kế thừa xuống dưới.
+
+- Enable Entra ID login to Azure VM
+. Cho phép user login VM bằng Entra ID. user có quyền log in VM qua Azure portal, RDP, SSH. dùng Identity entra (sso, mfa, ca)
+. bật log in bằng entra khi tạo vm, 2 roles quan trọng: Virtual Machine Administrator Login, Virtual Machine User Login.
+
+- Key Vault RBAC và access policies
+. Access Policies (cũ): cấp quyền trực tiếp trong key vault. chọn user/app, chọn quyền (get, list,secret,key...). quản lý rời rạc từng key vault.
+. RBAC: assign role ví dụ Key Vault Secrets User, Key Vault Reader,... quản lý tập trung, consistent vs Azure.
+
+*RBAC có thể control cả control + data plane. assign 1 lần ở resource group. còn Access Policy muốn cấp quyền phải vào từng key vault rồi add user.
+
+- Global Secure Access Client
+. agent cài trên máy user để định tuyến traffic qua global secure access
+. áp dụng zero trust cho network access
+. dùng để truy cập internet app hoặc app nội bộ, thay vpn truyền thống
+
+- Private Access
+. truy cập app nội bộ
+. thay VPN -> zero trust network ztna
+. access dựa trên user identity, device, CA
+
+- Internet Access
+. secure truy cập internet (web)
+. giống security web gateway
+. filter: url/domain, policy (block risk site)
